@@ -2,15 +2,12 @@ using dev_in_house_basic_authentication.Handler;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication("BasicAuthentication")
-                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler__old>
                 ("BasicAuthentication", null);
 
 builder.Services.AddAuthorization();

@@ -21,5 +21,14 @@ namespace dev_in_house_basic_authentication.Controllers
         {
             return Ok(new { Mensagem = "Basic Authentication Funcionou", Role = "SenaiRole" });
         }
+
+
+        [HttpGet("financeiro")]
+        [Authorize(Roles = "Financeiro")]
+        public IActionResult CentroCustoFinanciero()
+        {
+            return Ok(new { Mensagem = "Basic Authentication Funcionou", Role = "Financeiro" });
+
+        }
     }
 }
